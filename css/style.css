@@ -1,0 +1,916 @@
+/* layout setting */
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+button:focus,
+input:focus {
+  outline: none;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: .5s;
+}
+h2.title {
+  font-size: 26px;
+  color: #e54;
+}
+p.text {
+  font-size: 12px;
+  color: #888;
+}
+.bg_red {
+  background-color: #e54;
+}
+.bg_green {
+  background-color: #3a9;
+}
+.container {
+  width: 100%;
+  max-width: 980px;
+  margin: auto;
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.top_margin {
+  margin-top: 150px;
+}
+body {
+  background-color: #eee;
+}
+.for-m, 
+.m_menu_list, 
+.searchbox.m_searchbox,
+.bottom_size {
+  display: none;
+}
+/* :root {
+  --color-red: #e54;
+  --color-blue: #48c;
+  --color-green: #3a9;
+  --color-black: #888;
+  --font-size-l: 26px;
+  --font-size-m: 20px;
+  --font-size-s: 12px;
+} */
+
+/* 頁面第一列 */
+header.bg_red {
+  width: 100%;
+  max-height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.top_bar.container {
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px auto;
+}
+h1 a {
+  display: block;
+  width: 140px;
+  height: 56px;
+  background-image: url('../img/logo.svg');
+  background-size: contain;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.searchbox {
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+}
+.searchbox form {
+  margin-bottom: 6px;
+}
+.searchbox input,
+.searchbox button {
+  font-size: 20px;
+  padding: 6px;
+  border: none;
+  border-radius: 50px;
+}
+.searchbox input {
+  width: 300px;
+}
+.searchbox .search_click {
+  width: 39px;
+  height: 39px;
+  background-image: url(../img/search.svg);
+  background-size: contain;
+  cursor: pointer;
+}
+.searchbox h2,
+.keywords a {
+  font-size: 14px;
+  white-space: nowrap;
+  margin-right: 4px;
+}
+.searchbox h2 {
+  color: #bc1;
+  white-space: nowrap;
+}
+.keywords a {
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 4px;
+  display: block;
+}
+.searchbox a:hover {
+  color: #bc1;
+  border: 1px solid #bc1;
+}
+.searchbox form,
+.search_keyword,
+.keywords {
+  display: flex;
+}
+.search_keyword {
+  align-items: center;
+}
+nav {
+  justify-content: space-between;
+  padding: 6px 0;
+}
+nav a {
+  font-size: 26px;
+  background-color: #48c;
+  padding: 6px 12px;
+  margin: 6px 0;
+  border-radius: 6px;
+  display: block;
+}
+nav a:hover {
+  color: #e54;
+  background-color: #fff;
+}
+nav.container {
+  flex-wrap: wrap;
+  background-color: #eee;
+}
+.dropdown_btn {
+  position: relative;
+  padding-left: 24px;
+}
+.dropdown_btn::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-left: 10px solid #fff;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+.top_city_list,
+.top_about_list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 10px;
+}
+.top_city_list {
+  border: 1px solid #e54;
+}
+.top_about_list {
+  border: 1px solid #3a9;
+}
+/* 麵包屑 */
+.top_margin > .container {
+  background-color: #fff;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.breadcrumb a:hover,
+.breadcrumb li:last-child a {
+  color: #e54;
+}
+.breadcrumb li + li:before {
+  content: '>';
+  color: #888;
+  margin: 10px;
+}
+.control_side {
+  display: flex;
+}
+.breadcrumb li,
+.control_btn li {
+  display: inline;
+  font-size: 20px;
+}
+.breadcrumb a,
+.control_btn .ad_type:hover {
+  color: #888;
+}
+.control_btn .ad_type {
+  color: #e54;
+  margin-right: 10px;
+}
+.control_btn .ad_size {
+  color: #fff;
+  background-color: #3a9;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.control_btn .ad_size:hover {
+  background-color: #888;
+}
+  /* 主要內容 首頁 */
+.index,
+.myfinance {
+  background-color: #fff;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+.item {
+  border: 1px solid #888;
+  box-sizing: border-box;
+  padding: 0 6px;
+  margin-bottom: 10px;
+  transition: .3s;
+}
+.item:hover {
+  border: 2px solid #e54;
+}
+.item img {
+  width: 100%;
+  background-size: cover;
+  margin-top: 6px;
+}
+.item h2 {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.btn_contact {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.btn_contact a {
+  width: 49%;
+}
+.aboutme .btn_contact a {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.btn_contact img {
+  width: 100%;
+  border-radius: 6px;
+}
+.row_s { /* 廣告最小size */
+  width: 24.4%;
+}
+.row_s h2,
+.row_s .btn_contact {
+  display: none;
+}
+.row_m { /* 廣告適中size */
+  width: 33%;
+}
+.row_m .btn_contact {
+  display: none;
+}
+.row_l { /* 廣告最大size */
+  width: 49%;
+}
+/* 主要內容 */
+.ad_content, 
+.aboutme,
+.myfinancecontent {
+  flex-direction: column;
+  align-items: center;
+}
+.myfinance .item figure {
+  margin-bottom: 0;
+}
+.container figure {
+  text-align: center;
+  max-width: 570px;
+}
+.container figure img {
+  width: 100%;
+}
+.container figcaption {
+  font-size: 12px;
+  color: #888;
+  text-align: justify;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+.container figure,
+.txt {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.txt {
+  max-width: 800px;
+}
+.txt h3 {
+  font-size: 26px;
+  color: #e54;
+  margin-bottom: 10px;
+}
+.txt h4 {
+  font-size: 26px;
+  color: #e54;
+  margin: 10px 0 6px;
+}
+.txt p {
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+.txt ul {
+  margin-bottom: 10px;
+}
+.txt li {
+  font-size: 20px;
+  list-style: square;
+  margin-left: 26px;
+}
+.txt a {
+  color: #e54;
+  border: 1px solid #e54;
+  border-radius: 6px;
+  padding: 5px;
+  margin-right: 6px;
+  box-sizing: border-box;
+  line-height: 2;
+}
+.txt a:hover {
+  color: #bc1;
+  border: 1px solid #bc1;
+}
+.tag_last {
+  margin-bottom: 20px;
+}
+.tag_last h5 {
+  font-size: 26px;
+  color: #e54;
+  margin: 10px 0 6px;
+}
+.tag_last a {
+  color: #e54;
+  border: 1px solid #e54;
+  border-radius: 6px;
+  padding: 5px;
+  margin-right: 6px;
+  box-sizing: border-box;
+  line-height: 2;
+}
+.txt h3 mark,
+.tag_last mark {
+  background-color: #e54;
+  color: #fff;
+  padding: 6px;
+  margin-right: 6px;
+  line-height: 2;
+}
+/* 熱門影片頁面 */
+.myvideo {
+  flex-wrap: wrap;
+}
+.myvideo li a {
+  position: relative;
+  display: block;
+}
+.videoclick {
+  width: 80px;
+  height: 56px;
+  background: url('../img/video_b.svg') no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -40px;
+  opacity: .8;
+  transition: .4s;
+}
+.myvideo li a:hover .videoclick {
+  width: 80px;
+  height: 56px;
+  background: url('../img/video_r.svg') no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  opacity: 1;
+}
+/* 財經快訊頁面 */
+.myfinance img {
+  max-height: 140px;
+}
+.myfinance figcaption {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.myfinance h3 {
+  font-size: 20px;
+  max-height: 54px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.myfinance p {
+  font-size: 20px;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.myfinance .txt {
+  height: 244px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  text-align: justify;
+}
+.txt_bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.txt_bottom .readmore {
+  font-size: 16px;
+  background-color: #e54;
+  border-radius: 6px;
+  line-height: 2;
+  padding: 0 10px;
+}
+.txt_bottom .readmore:hover {
+  background-color: #888;
+}
+
+.txt_bottom .txt_date {
+  font-size: 20px;
+  color: #3a9;
+  line-height: 32px;
+}
+.myfinancecontent figure {
+  border: 1px solid #3a9;
+  padding: 10px 10px 0 10px;
+  box-sizing: border-box;
+}
+.myfinancecontent figure .txt_date {
+  color: #e54;
+  margin-left: 20px;
+}
+
+/* 熱門關鍵字 */
+.keywordbox {
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+.keywordbox .keywords {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.keywordbox .keywords li {
+  margin-top: 6px;
+}
+.keywordbox .keywords a {
+  color: #888;
+  border: 1px solid #888;
+  white-space: normal;
+}
+.keywordbox .keywords a:hover {
+  color: #e54;
+  border: 1px solid #e54;
+}
+/* 詐騙提醒 */
+.warning {
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding-top: 10px;
+}
+.warning .txt {
+  background-color: #fff;
+  column-count: 2;
+  column-gap: 30px;
+  margin: 10px 0;
+}
+.warning .txt p {
+  font-size: 20px;
+  color: #888;
+  line-height: 1.2;
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 6px;
+}
+.warning .txt p::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #e54;
+  border-radius: 5px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+.warning > p {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #e54;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* 底部資訊 */
+.guideline {
+  justify-content: space-evenly;
+  padding: 20px 0;
+}
+.guideline a {
+  font-size: 20px;
+  line-height: 1.4;
+  color: #48c;
+}
+.guideline a:hover {
+  color: #e54;
+}
+.about a,
+.money_area a {
+  position: relative;
+}
+.about a::before,
+.money_area a::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #48c;
+  position: absolute;
+  top: 8px;
+  left: -10px;
+}
+.media img {
+  width: 20px;
+  vertical-align: top;
+  margin: 4px 6px 0 0;
+}
+.copyright {
+  flex-direction: column;
+  background-color: #fff;
+  padding: 30px 0 10px;
+}
+.copyright h2 {
+  margin-top: 40px;
+}
+.copyright .t-center {
+  text-align: center;
+}
+.copyright mark {
+  color: #e54;
+  padding-right: 4px;
+}
+.copyright p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.4;
+  padding: 4px 20px;
+  text-align: justify;
+}
+
+/* 回頂端按鈕 */
+.gotop {
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  border-radius: 50%;
+  background-image: url(../img/btnGoTop.gif);
+  cursor: pointer;
+  opacity: .6;
+  transition: .4s;
+}
+.gotop:hover {
+  opacity: 1;
+}
+
+/* 手機菜單清單 */
+.m_menu_list,
+.searchbox.m_searchbox,
+.bottom_size {
+  width: 100%;
+  height: 100vh;
+  background-color: #e54;
+  padding: 20px 5%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow-y: auto;
+}
+.m_menu_list ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.m_menu_list ul a {
+  font-size: 26px;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.m_menu_list ul a:hover {
+  color: #e54;
+  background-color: #fff;
+}
+.m_list_close {
+  width: 50px;
+  height: 50px;
+  background-color: #bc1;
+  border-radius: 50%;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.m_list_close::before,
+.m_list_close::after {
+  content: '';
+  width: 44px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #e54;
+  position: absolute;
+  top: 24px;
+  left: 3px;
+}
+.m_list_close::before {
+  transform: rotate(45deg);
+}
+.m_list_close::after {
+  transform: rotate(-45deg);
+}
+.m_menu_list ul:first-of-type {
+  margin: 50px 0 20px;
+}
+.bottom_size .control_btn {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+.bottom_size .control_btn li {
+  width: 90%;
+}
+.bottom_size .control_btn a {
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0;
+  display: block;
+  margin: 10px 0 0;
+}
+/* 下方控制面-關閉 */
+.bottom_control {
+  display: none;
+}
+
+/* 手機版介面 */
+@media screen and (max-width: 890px){
+  /* 上方選單 */
+  .for-pc {
+    display: none;
+  }
+  .for-m {
+    display: block;
+  }
+  header.bg_red {
+    height: 80px;
+  }
+  nav.container {
+    margin-top: 12px;
+    justify-content: space-evenly;
+  }
+  .top_margin {
+    margin-top: 150px;
+  }
+  .top_bar.container {
+    position: relative;
+  }
+  .for-m .top_bar h1 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -70px;
+  }
+  .searchbox {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .searchbox .search_click {
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+  }
+  .searchbox .btn_m_openmenu {
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+    position: relative;
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 6px;
+  }
+  .searchbox .btn_m_openmenu::before,
+  .searchbox .btn_m_openmenu::after {
+    content: '';
+  }
+  .searchbox .btn_m_openmenu::before,
+  .searchbox .btn_m_openmenu::after,
+  .searchbox .btn_m_openmenu div {
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+  }
+  .searchbox .btn_m_openmenu::before {
+    top: 10px;
+  }
+  .searchbox .btn_m_openmenu::after {
+    top: 23px;
+  }
+  .searchbox .btn_m_openmenu div {
+    top: 36px;
+  }
+  .search_keyword {
+    justify-content: center;
+  }
+
+  /* 搜尋區 */
+  .searchbox form {
+    justify-content: center;
+    margin-top: 60px;
+  }
+  .searchbox input {
+    width: 70%;
+  }
+  .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;
+  }
+  .search_keyword .keywords li {
+    margin: 4px 0;
+  }
+}
+@media screen and (max-width: 640px){
+  .for-m nav.container a {
+    width: 25%;
+    text-align: center;
+    margin: 0 0 4px;
+  }
+  nav {
+    padding-bottom: 0;
+  }
+  .top_margin {
+    margin-top: 180px;
+  }
+  .warning .txt {
+    column-count: 1;
+  }
+  .videoclick {
+    width: 60px;
+    height: 40px;
+    margin-top: -40px;
+    margin-left: -30px;
+  }
+  /* 財經快訊 */
+  .myfinance .item,
+  .myvideo .item {
+    width: 49%;
+  }
+}
+@media screen and (max-width: 560px){
+  .container.content_control {
+    flex-direction: column;
+  }
+  .control_side {
+    justify-content: space-between;
+  }
+  .control_btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .control_btn a {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  /* 財經快訊頁面 */
+  .txt_bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 460px){
+  /* 上方選單 */
+  .for-m nav.container {
+    justify-content: space-between;
+  }
+  .for-m nav.container a {
+    width: 24%;
+    font-size: 20px;
+  }
+  .top_margin {
+    margin-top: 170px;
+  }
+  .row_s { /* 廣告最小size */
+    width: 33%;
+  }
+  .row_s h2,
+  .row_s .btn_contact {
+    display: none;
+  }
+  .row_m { /* 廣告適中size */
+    width: 49%;
+  }
+  .row_m .btn_contact {
+    display: none;
+  }
+  .row_l { /* 廣告最大size */
+    width: 100%;
+  }
+  .search_keyword {
+    flex-direction: column;
+  }
+  .search_keyword h2 {
+    margin: 10px 0 6px;
+  }
+  /* 頁尾底部 */
+  .guideline {
+    align-items: center;
+    flex-direction: column;
+  }
+  .guideline ul + ul {
+    margin-top: 20px;
+  }
+  .copyright {
+    margin-bottom: 50px;
+  }
+  /* 下方控制面 */
+  .bottom_control {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+  .bottom_control li {
+    width: 25%;
+    box-sizing: border-box;
+  }
+  .bottom_control li + li {
+    border-left: 1px solid #fff;
+  }
+  .bottom_control li a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+  }
+  .gotop {
+    bottom: 80px;
+  }
+  /* 財經快訊頁面 */
+  .myfinance .item,
+  .myvideo .item {
+    width: 100%;
+  }
+  .myfinance .item img {
+    max-height: 200px;
+  }
+  .myfinance .txt {
+    height: 172px;
+  }
+  /* 廣告詳細內頁 */
+  .btn_contact {
+    flex-wrap: wrap;
+  }
+  .btn_contact a {
+    width: 100%;
+  }
+}
