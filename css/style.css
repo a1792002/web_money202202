@@ -287,7 +287,8 @@ nav.container {
 /* 主要內容 */
 .ad_content, 
 .aboutme,
-.myfinancecontent {
+.myfinancecontent,
+.ad_else {
   flex-direction: column;
   align-items: center;
 }
@@ -376,6 +377,18 @@ nav.container {
   padding: 6px;
   margin-right: 6px;
   line-height: 2;
+}
+.ad_else h2.title {
+  margin: 10px auto;
+}
+.ad_four {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.ad_four li.row_m {
+  width: 24%;
 }
 /* 熱門影片頁面 */
 .myvideo {
@@ -928,5 +941,8 @@ nav.container {
   }
   .btn_contact a {
     width: 100%;
+  }
+  .ad_four li.row_m {
+    width: 49%;
   }
 }
